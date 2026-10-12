@@ -1,0 +1,10 @@
+from ultralytics import YOLO
+
+model = YOLO("runs/detect/train-8/weights/best.pt") 
+
+results = model.predict(
+    source="test3.jpg",
+    save=True,        # saves annotated image to runs/predict/
+    conf=0.25,        # confidence threshold (lower = more detections)
+    show=True,        # pop up window with results
+)
